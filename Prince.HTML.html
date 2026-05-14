@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love 💖</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff4d6d, #ff85a2, #ffc2d1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255,255,255,0.8);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: #ffe5ec;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  color: rgba(255,255,255,0.8);
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <h1>Hi Love 💖</h1>
+    <p>
+      Every time I see you, my world becomes brighter ✨<br>
+      You are the reason behind my smile 😊
+    </p>
+    <button class="btn" onclick="showMessage()">Click Me 💌</button>
+  </div>  <script>
+    function showMessage() {
+      alert("I just want to say... I really love you ❤️");
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 200);
+  </script></body>
+</html>
